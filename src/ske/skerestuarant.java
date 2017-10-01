@@ -4,9 +4,24 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class skerestuarant {
-	 static int q1=0,q2=0,q3=0,sumq1,sumq2,sumq3,sump1,sump2,sump3;
+	 static int q1=0,q2=0,q3=0,sumq1,sumq2,sumq3,sump1,sump2,sump3,price=0;
 	 static int tt = 0;
-	   
+	 
+	 public static int chooseChoice(int choice,int quantity,int p){
+		   price = quantity*p;
+		   return price;
+		 }  
+	 
+	 public static int pirceForEachMenu(int choice,int priceX,int sumX){
+		  sumX = sumX + priceX;
+		  return sumX;
+		 }
+	 
+	 public static int quantityPlus(int choice,int quantity,int sumQx){
+		   sumQx = sumQx + quantity;
+		   return sumQx;
+		 }
+	 
 	  public static void receiptwithmember(int q1,int sumq1,int q2,int sumq2,int q3,int sumq3){
 	   tt = q1 + q2 +q3;
 	      System.out.println("+------------Here is you receipt---------+");
@@ -26,7 +41,6 @@ public class skerestuarant {
 	      System.out.println("*------------------+---------+-----------*");
 	  }
 	  
-	  
 	  public static void total(int q1,int sumq1,int q2,int sumq2,int q3,int sumq3) {
 	   tt = q1 + q2 +q3;
 	       System.out.println("+------ Menu -----+-- Qty --+-- Price ---+");
@@ -44,6 +58,7 @@ public class skerestuarant {
 	      System.out.printf("| Total\t\t             |  %5d    |\n",tt);
 	      System.out.println("*------------------+---------+-----------*");
 	     }
+	 
 	  public static void SKEpromotion(int num1){
 	     Random rand = new Random();
 	     int ran1 = rand.nextInt(3)+1;
